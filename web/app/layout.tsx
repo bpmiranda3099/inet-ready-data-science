@@ -7,19 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/app-icon.png',
-        type: 'image/png',
-      },
-    ],
-    apple: '/app-icon.png',
-    shortcut: '/app-icon.png',
-  },
+  title: 'INET-READY',
+  description: 'Your Heat Check for Safe and Informed Travel - Data Science Edition',
 }
 
 export default function RootLayout({
