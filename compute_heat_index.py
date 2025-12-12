@@ -2,9 +2,8 @@
 from __future__ import annotations
 
 import csv
-import math
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, cast
+from typing import Dict, Iterable, List, Optional
 
 from constants.files import HEAT_INDEX_LOG_FILENAME
 from constants.path import (
@@ -14,8 +13,8 @@ from constants.path import (
     ensure_dirs,
 )
 from constants.weather import HEAT_INDEX_TEMPERATURE_COLUMNS, HUMIDITY_AVG_COLUMN
+from utils.heat_index import compute_heat_index_f
 from utils.logger import get_logger
-from utils.units import celsius_to_fahrenheit
 
 
 def _parse_float(value: Optional[str]) -> Optional[float]:
@@ -38,37 +37,6 @@ def _average_temperature(row: Dict[str, str]) -> Optional[float]:
     return sum(filtered) / len(filtered)
 
 
-def _compute_heat_index_f(temp_c: float, rh: float) -> float:
-    temp_f = cast(float, celsius_to_fahrenheit(temp_c))
-    rh = max(0.0, min(rh, 100.0))
-
-    simple = 0.5 * (temp_f + 61.0 + ((temp_f - 68.0) * 1.2) + (rh * 0.094))
-    hi = (simple + temp_f) / 2.0
-
-    if hi < 80.0:
-        return hi
-
-    hi = (
-        -42.379
-        + 2.04901523 * temp_f
-        + 10.14333127 * rh
-        - 0.22475541 * temp_f * rh
-        - 0.00683783 * temp_f * temp_f
-        - 0.05481717 * rh * rh
-        + 0.00122874 * temp_f * temp_f * rh
-        + 0.00085282 * temp_f * rh * rh
-        - 0.00000199 * temp_f * temp_f * rh * rh
-    )
-
-    if rh < 13.0 and 80.0 <= temp_f <= 112.0:
-        adjustment = ((13.0 - rh) / 4.0) * math.sqrt(max(0.0, (17.0 - abs(temp_f - 95.0)) / 17.0))
-        hi -= adjustment
-    elif rh > 85.0 and 80.0 <= temp_f <= 87.0:
-        adjustment = ((rh - 85.0) / 10.0) * ((87.0 - temp_f) / 5.0)
-        hi += adjustment
-
-    return hi
-
 
 def _rows_with_heat_index(rows: Iterable[Dict[str, str]], logger) -> List[Dict[str, str]]:
     output: List[Dict[str, str]] = []
@@ -86,7 +54,7 @@ def _rows_with_heat_index(rows: Iterable[Dict[str, str]], logger) -> List[Dict[s
             skipped += 1
             continue
 
-        hi_f = _compute_heat_index_f(temp_c, humidity)
+        hi_f = compute_heat_index_f(temp_c, humidity)
         output.append({"city": city, "date": day, "heat_index": f"{hi_f:.2f}"})
 
     if skipped:

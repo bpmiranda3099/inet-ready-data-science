@@ -76,6 +76,7 @@ OPEN_METEO_REQUEST_COOLDOWN: Final[float] = 1.5
 DEFAULT_TEMPERATURE_UNIT: Final[str] = "celsius"
 DEFAULT_TIMEZONE: Final[str] = "Asia/Singapore"
 OPEN_METEO_API_URL: Final[str] = "https://archive-api.open-meteo.com/v1/archive"
+OPEN_METEO_FORECAST_API_URL: Final[str] = "https://api.open-meteo.com/v1/forecast"
 
 __all__ = [
     "WEATHER_CITY_COLUMN",
@@ -105,4 +106,5 @@ __all__ = [
     "DEFAULT_TEMPERATURE_UNIT",
     "DEFAULT_TIMEZONE",
     "OPEN_METEO_API_URL",
+    "OPEN_METEO_FORECAST_API_URL",
 ]

@@ -14,6 +14,9 @@ HEAT_INDEX_PREDICTIONS_FILENAME: Final[str] = "heat_index_predictions.csv"
 PREDICT_HEAT_INDEX_LOG_FILENAME: Final[str] = "predict_heat_index.log"
 HEAT_INDEX_MODEL_FILENAME: Final[str] = "heat_index_xgb.json"
 METRICS_LOG_FILENAME: Final[str] = "metrics.log"
+HOURLY_HEAT_INDEX_FILENAME: Final[str] = "hourly_heat_index.csv"
+GET_HOURLY_HEAT_INDEX_LOG_FILENAME: Final[str] = "get_hourly_heat_index.log"
+HOURLY_HEAT_INDEX_JSON_FILENAME: Final[str] = "hourly_heat_index.json"
 
 __all__ = [
     "LOG_FILENAME_TEMPLATE",
@@ -28,4 +31,7 @@ __all__ = [
     "PREDICT_HEAT_INDEX_LOG_FILENAME",
     "HEAT_INDEX_MODEL_FILENAME",
     "METRICS_LOG_FILENAME",
+    "HOURLY_HEAT_INDEX_FILENAME",
+    "GET_HOURLY_HEAT_INDEX_LOG_FILENAME",
+    "HOURLY_HEAT_INDEX_JSON_FILENAME",
 ]

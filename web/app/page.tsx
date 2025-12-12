@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 
 export default function LandingPage() {
@@ -7,7 +8,10 @@ export default function LandingPage() {
     <div className="min-h-screen flex flex-col bg-white">
       {/* Header */}
       <header className="bg-blue-600 text-white px-6 py-4 flex items-center justify-between">
-        <div className="text-2xl">☀️</div>
+        <div className="flex items-center gap-3">
+          <Image src="/app-icon.png" alt="INET-READY icon" width={40} height={40} priority className="h-10 w-10" />
+          <span className="text-2xl font-semibold">INET-READY</span>
+        </div>
         <nav className="flex gap-8">
           <button className="hover:opacity-80">Features</button>
           <button className="hover:opacity-80">About</button>
@@ -52,23 +56,37 @@ export default function LandingPage() {
             </svg>
 
             {/* Birds */}
-            <div className="absolute top-12 right-1/3 text-2xl">🐦</div>
-            <div className="absolute top-16 right-2/5 text-2xl">🐦</div>
+            <div className="absolute top-12 right-1/3 text-2xl text-white">
+              <span className="material-symbols-rounded" aria-hidden="true">
+                flight
+              </span>
+            </div>
+            <div className="absolute top-16 right-2/5 text-2xl text-white">
+              <span className="material-symbols-rounded" aria-hidden="true">
+                flight
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Feature Cards */}
         <div className="grid grid-cols-3 gap-6">
           <div className="border-2 border-gray-300 rounded-2xl p-8 flex flex-col items-center justify-center gap-4 hover:border-gray-400 transition-colors">
-            <div className="text-6xl">🗺️</div>
+            <span className="material-symbols-rounded text-6xl text-blue-600" aria-hidden="true">
+              map
+            </span>
             <p className="text-lg font-semibold text-gray-800">Local Trend Data</p>
           </div>
           <div className="border-2 border-gray-300 rounded-2xl p-8 flex flex-col items-center justify-center gap-4 hover:border-gray-400 transition-colors">
-            <div className="text-6xl">📊</div>
+            <span className="material-symbols-rounded text-6xl text-blue-600" aria-hidden="true">
+              query_stats
+            </span>
             <p className="text-lg font-semibold text-gray-800">7-Day Trend Data</p>
           </div>
           <div className="border-2 border-gray-300 rounded-2xl p-8 flex flex-col items-center justify-center gap-4 hover:border-gray-400 transition-colors">
-            <div className="text-6xl">🛡️</div>
+            <span className="material-symbols-rounded text-6xl text-blue-600" aria-hidden="true">
+              shield_person
+            </span>
             <p className="text-lg font-semibold text-gray-800">Health & Safety</p>
           </div>
         </div>
