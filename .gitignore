@@ -1,0 +1,66 @@
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.manifest
+*.spec
+
+# Python environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# Python tooling caches
+.pytest_cache/
+.mypy_cache/
+ruff_cache/
+.spyproject/
+.tox/
+.coverage
+coverage.xml
+htmlcov/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Data artifacts
+logs/
+dataset/raw/
+dataset/clean/
+dataset/prediction/
+analysis/figures/
+analysis/tables/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Node / Next.js
+web/node_modules/
+web/.next/
+web/.turbo/
+.next/
+node_modules/
+.pnp*
+
+# Frontend build outputs
+web/out/
+web/dist/
+web/coverage/
+out/
+coverage/
+
+# OS-specific files
+.DS_Store
+Thumbs.db

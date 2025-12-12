@@ -1,0 +1,10 @@
+overpy
+loguru
+requests
+pandas
+numpy
+scikit-learn
+xgboost
+psutil
+matplotlib
+seaborn
