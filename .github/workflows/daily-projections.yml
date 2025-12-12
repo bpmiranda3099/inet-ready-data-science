@@ -35,6 +35,15 @@ jobs:
       - name: Recompute projected heat index
         run: python predict_heat_index.py
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sync dataset copies for web
+        working-directory: web
+        run: node ./scripts/sync-public-data.mjs
+
       - name: Commit refreshed history and projections
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

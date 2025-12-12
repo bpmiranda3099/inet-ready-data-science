@@ -1,0 +1,197 @@
+{
+  "generated_at": "2025-12-12T10:51:15.957Z",
+  "entries": [
+    {
+      "city": "General Trias",
+      "updated_at": "2025-12-12T10:27:38.411Z",
+      "recommendations": [
+        {
+          "title": "Expand shaded rest points",
+          "summary": "Set up extra misting tents or shaded lay-bys near markets and transport hubs in General Trias to avoid crowding during heat spikes.",
+          "urgency": "medium",
+          "focus": "cooling"
+        },
+        {
+          "title": "Intensify hydration alerts",
+          "summary": "Push barangay-level SMS or megaphone reminders every two hours urging residents of General Trias to check vulnerable neighbors and hydrate.",
+          "urgency": "high",
+          "focus": "risk-comms"
+        },
+        {
+          "title": "Deploy barangay patrol thermometers",
+          "summary": "Equip community volunteers with handheld meters to log apparent temperatures around schools and construction corridors in General Trias.",
+          "urgency": "low",
+          "focus": "monitoring"
+        }
+      ]
+    },
+    {
+      "city": "Dasmarinas",
+      "updated_at": "2025-12-12T10:28:55.575Z",
+      "recommendations": [
+        {
+          "title": "Expand shaded rest points",
+          "summary": "Set up extra misting tents or shaded lay-bys near markets and transport hubs in Dasmarinas to avoid crowding during heat spikes.",
+          "urgency": "medium",
+          "focus": "cooling"
+        },
+        {
+          "title": "Intensify hydration alerts",
+          "summary": "Push barangay-level SMS or megaphone reminders every two hours urging residents of Dasmarinas to check vulnerable neighbors and hydrate.",
+          "urgency": "high",
+          "focus": "risk-comms"
+        },
+        {
+          "title": "Deploy barangay patrol thermometers",
+          "summary": "Equip community volunteers with handheld meters to log apparent temperatures around schools and construction corridors in Dasmarinas.",
+          "urgency": "low",
+          "focus": "monitoring"
+        }
+      ]
+    },
+    {
+      "city": "Naic",
+      "updated_at": "2025-12-12T10:28:59.322Z",
+      "recommendations": [
+        {
+          "title": "Expand shaded rest points",
+          "summary": "Set up extra misting tents or shaded lay-bys near markets and transport hubs in Naic to avoid crowding during heat spikes.",
+          "urgency": "medium",
+          "focus": "cooling"
+        },
+        {
+          "title": "Intensify hydration alerts",
+          "summary": "Push barangay-level SMS or megaphone reminders every two hours urging residents of Naic to check vulnerable neighbors and hydrate.",
+          "urgency": "high",
+          "focus": "risk-comms"
+        },
+        {
+          "title": "Deploy barangay patrol thermometers",
+          "summary": "Equip community volunteers with handheld meters to log apparent temperatures around schools and construction corridors in Naic.",
+          "urgency": "low",
+          "focus": "monitoring"
+        }
+      ]
+    },
+    {
+      "city": "Imus",
+      "updated_at": "2025-12-12T10:31:47.173Z",
+      "recommendations": [
+        {
+          "title": "Expand shaded rest points",
+          "summary": "Set up extra misting tents or shaded lay-bys near markets and transport hubs in Imus to avoid crowding during heat spikes.",
+          "urgency": "medium",
+          "focus": "cooling"
+        },
+        {
+          "title": "Intensify hydration alerts",
+          "summary": "Push barangay-level SMS or megaphone reminders every two hours urging residents of Imus to check vulnerable neighbors and hydrate.",
+          "urgency": "high",
+          "focus": "risk-comms"
+        },
+        {
+          "title": "Deploy barangay patrol thermometers",
+          "summary": "Equip community volunteers with handheld meters to log apparent temperatures around schools and construction corridors in Imus.",
+          "urgency": "low",
+          "focus": "monitoring"
+        }
+      ]
+    },
+    {
+      "city": "Amadeo",
+      "updated_at": "2025-12-12T10:33:05.014Z",
+      "recommendations": [
+        {
+          "title": "Expand shaded rest points",
+          "summary": "Set up extra misting tents or shaded lay-bys near markets and transport hubs in Amadeo to avoid crowding during heat spikes.",
+          "urgency": "medium",
+          "focus": "cooling"
+        },
+        {
+          "title": "Intensify hydration alerts",
+          "summary": "Push barangay-level SMS or megaphone reminders every two hours urging residents of Amadeo to check vulnerable neighbors and hydrate.",
+          "urgency": "high",
+          "focus": "risk-comms"
+        },
+        {
+          "title": "Deploy barangay patrol thermometers",
+          "summary": "Equip community volunteers with handheld meters to log apparent temperatures around schools and construction corridors in Amadeo.",
+          "urgency": "low",
+          "focus": "monitoring"
+        }
+      ]
+    },
+    {
+      "city": "Mendez",
+      "updated_at": "2025-12-12T10:50:33.409Z",
+      "recommendations": [
+        {
+          "title": "Expand shaded rest points",
+          "summary": "Set up extra misting tents or shaded lay-bys near markets and transport hubs in Mendez to avoid crowding during heat spikes.",
+          "urgency": "medium",
+          "focus": "cooling"
+        },
+        {
+          "title": "Intensify hydration alerts",
+          "summary": "Push barangay-level SMS or megaphone reminders every two hours urging residents of Mendez to check vulnerable neighbors and hydrate.",
+          "urgency": "high",
+          "focus": "risk-comms"
+        },
+        {
+          "title": "Deploy barangay patrol thermometers",
+          "summary": "Equip community volunteers with handheld meters to log apparent temperatures around schools and construction corridors in Mendez.",
+          "urgency": "low",
+          "focus": "monitoring"
+        }
+      ]
+    },
+    {
+      "city": "Cavite City",
+      "updated_at": "2025-12-12T10:51:13.037Z",
+      "recommendations": [
+        {
+          "title": "Expand shaded rest points",
+          "summary": "Set up extra misting tents or shaded lay-bys near markets and transport hubs in Cavite City to avoid crowding during heat spikes.",
+          "urgency": "medium",
+          "focus": "cooling"
+        },
+        {
+          "title": "Intensify hydration alerts",
+          "summary": "Push barangay-level SMS or megaphone reminders every two hours urging residents of Cavite City to check vulnerable neighbors and hydrate.",
+          "urgency": "high",
+          "focus": "risk-comms"
+        },
+        {
+          "title": "Deploy barangay patrol thermometers",
+          "summary": "Equip community volunteers with handheld meters to log apparent temperatures around schools and construction corridors in Cavite City.",
+          "urgency": "low",
+          "focus": "monitoring"
+        }
+      ]
+    },
+    {
+      "city": "Tagaytay",
+      "updated_at": "2025-12-12T10:51:15.957Z",
+      "recommendations": [
+        {
+          "title": "Expand shaded rest points",
+          "summary": "Set up extra misting tents or shaded lay-bys near markets and transport hubs in Tagaytay to avoid crowding during heat spikes.",
+          "urgency": "medium",
+          "focus": "cooling"
+        },
+        {
+          "title": "Intensify hydration alerts",
+          "summary": "Push barangay-level SMS or megaphone reminders every two hours urging residents of Tagaytay to check vulnerable neighbors and hydrate.",
+          "urgency": "high",
+          "focus": "risk-comms"
+        },
+        {
+          "title": "Deploy barangay patrol thermometers",
+          "summary": "Equip community volunteers with handheld meters to log apparent temperatures around schools and construction corridors in Tagaytay.",
+          "urgency": "low",
+          "focus": "monitoring"
+        }
+      ]
+    }
+  ]
+}

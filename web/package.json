@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "pnpm sync:data",
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "sync:data": "node ./scripts/sync-public-data.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

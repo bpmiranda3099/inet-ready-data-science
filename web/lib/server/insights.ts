@@ -1,9 +1,21 @@
-import { promises as fs } from "fs"
+import { existsSync, promises as fs } from "fs"
 import path from "path"
 import { findDemographicRecord, type DemographicRecord } from "@/lib/server/demographics"
 
-const HOURLY_PATH = path.join(process.cwd(), "public", "data", "hourly_heat_index.json")
-const WEATHER_HISTORY_PATH = path.join(process.cwd(), "..", "dataset", "clean", "weather_history.csv")
+const resolveDataPath = (...candidates: string[]): string => {
+  const match = candidates.find((candidate) => existsSync(candidate))
+  return match ?? candidates[0]
+}
+
+const HOURLY_PATH = resolveDataPath(
+  path.join(process.cwd(), "public", "data", "hourly_heat_index.json"),
+  path.join(process.cwd(), "..", "dataset", "clean", "hourly_heat_index.json"),
+)
+
+const WEATHER_HISTORY_PATH = resolveDataPath(
+  path.join(process.cwd(), "public", "data", "weather_history.csv"),
+  path.join(process.cwd(), "..", "dataset", "clean", "weather_history.csv"),
+)
 
 export type HeatIndexPoint = {
   city: string

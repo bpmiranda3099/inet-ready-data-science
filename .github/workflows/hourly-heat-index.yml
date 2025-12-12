@@ -32,6 +32,15 @@ jobs:
       - name: Update hourly heat index dataset
         run: python get_hourly_heat_index.py
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sync dataset copies for web
+        working-directory: web
+        run: node ./scripts/sync-public-data.mjs
+
       - name: Commit hourly artifacts
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

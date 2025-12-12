@@ -1,9 +1,17 @@
-import { promises as fs } from "fs"
+import { existsSync, promises as fs } from "fs"
 import path from "path"
 import { NextRequest, NextResponse } from "next/server"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
-const CACHE_PATH = path.join(process.cwd(), "..", "dataset", "clean", "safety_recommendations_cache.json")
+const resolveDataPath = (...candidates: string[]): string => {
+  const match = candidates.find((candidate) => existsSync(candidate))
+  return match ?? candidates[0]
+}
+
+const CACHE_PATH = resolveDataPath(
+  path.join(process.cwd(), "public", "data", "safety_recommendations_cache.json"),
+  path.join(process.cwd(), "..", "dataset", "clean", "safety_recommendations_cache.json"),
+)
 const REFRESH_WINDOW_MS = 60 * 60 * 1000 // one hour
 
 export type SafetyRecommendation = {
@@ -41,8 +49,12 @@ const readCache = async (): Promise<CachePayload> => {
 }
 
 const writeCache = async (payload: CachePayload) => {
-  await fs.mkdir(path.dirname(CACHE_PATH), { recursive: true })
-  await fs.writeFile(CACHE_PATH, JSON.stringify(payload, null, 2))
+  try {
+    await fs.mkdir(path.dirname(CACHE_PATH), { recursive: true })
+    await fs.writeFile(CACHE_PATH, JSON.stringify(payload, null, 2))
+  } catch (error) {
+    console.warn("safety-recommendations: unable to persist cache", error)
+  }
 }
 
 const createFallbackRecommendations = (city: string): SafetyRecommendation[] => [

@@ -1,7 +1,15 @@
-import { promises as fs } from "fs"
+import { existsSync, promises as fs } from "fs"
 import path from "path"
 
-const DEMOGRAPHICS_PATH = path.join(process.cwd(), "..", "dataset", "clean", "cavite_demographics.csv")
+const resolveDataPath = (...candidates: string[]): string => {
+  const match = candidates.find((candidate) => existsSync(candidate))
+  return match ?? candidates[0]
+}
+
+const DEMOGRAPHICS_PATH = resolveDataPath(
+  path.join(process.cwd(), "public", "data", "cavite_demographics.csv"),
+  path.join(process.cwd(), "..", "dataset", "clean", "cavite_demographics.csv"),
+)
 
 const HEADERS = [
   "city",

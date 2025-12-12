@@ -484,15 +484,11 @@ export default function Dashboard() {
   return (
     <div className="h-screen flex flex-col bg-gray-50 overflow-hidden">
       {/* Header */}
-      <header className="bg-blue-600 text-white px-6 py-4 flex items-center justify-between">
+      <header className="bg-blue-600 text-white px-6 py-4 flex items-center justify-center">
         <div className="flex items-center gap-3">
           <Image src="/app-icon.png" alt="INET-READY icon" width={40} height={40} priority className="h-10 w-10" />
           <span className="text-2xl font-semibold">INET-READY</span>
         </div>
-        <nav className="flex gap-8">
-          <button className="hover:opacity-80">Features</button>
-          <button className="hover:opacity-80">About</button>
-        </nav>
       </header>
 
       {/* Main Content */}

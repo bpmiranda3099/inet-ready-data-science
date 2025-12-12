@@ -32,6 +32,15 @@ jobs:
       - name: Scrape Cavite demographic table
         run: python dataset/misc/fetch_cavite_demographics.py
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sync dataset copies for web
+        working-directory: web
+        run: node ./scripts/sync-public-data.mjs
+
       - name: Commit demographic updates
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
