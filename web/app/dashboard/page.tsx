@@ -1,12 +1,15 @@
 "use client"
 
-import { CityMap, type CityHeatLayer } from "@/components/city-map"
+import dynamic from "next/dynamic"
+import type { CityHeatLayer } from "@/components/city-map"
 import { cityOptions, type CityOption } from "@/lib/cities"
 import { darkenColor, heatIndexColor, lightenColor, pickTextColor } from "@/lib/heat-index-colors"
 import Image from "next/image"
 import Link from "next/link"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from "recharts"
+
+const CityMap = dynamic(() => import("@/components/city-map").then((mod) => mod.CityMap), { ssr: false })
 
 const fallbackChartData = [
   { name: "Thu", value: 98 },
