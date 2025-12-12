@@ -17,6 +17,11 @@ const WEATHER_HISTORY_PATH = resolveDataPath(
   path.join(process.cwd(), "..", "dataset", "clean", "weather_history.csv"),
 )
 
+const PREDICTIONS_PATH = resolveDataPath(
+  path.join(process.cwd(), "public", "data", "heat_index_predictions.csv"),
+  path.join(process.cwd(), "..", "dataset", "prediction", "heat_index_predictions.csv"),
+)
+
 export type HeatIndexPoint = {
   city: string
   timestamp: string
@@ -49,6 +54,13 @@ type WeatherHistoryPoint = {
   average: number | null
 }
 
+export type ForecastPoint = {
+  date: string
+  predicted: number | null
+  actual: number | null
+  residual: number | null
+}
+
 export type InsightSnapshot = {
   city: string
   generatedAt: string | null
@@ -65,6 +77,7 @@ export type InsightSnapshot = {
   coolingCenterLoadPct: number | null
   hourlyPoints: HeatIndexPoint[]
   weatherHistory: WeatherHistoryPoint[]
+  forecastPoints: ForecastPoint[]
 }
 
 type RiskLevel = "unknown" | "comfort" | "caution" | "moderate" | "high" | "extreme"
@@ -148,6 +161,33 @@ const toWeatherRecord = (row: string[], headers: string[]): WeatherHistoryPoint 
   }
 }
 
+const toForecastRecord = (row: string[], headers: string[]): (ForecastPoint & { city: string }) | null => {
+  if (row.length !== headers.length) {
+    return null
+  }
+  const record: Record<string, string> = {}
+  headers.forEach((header, index) => {
+    record[header] = row[index]?.trim() ?? ""
+  })
+  if (!record.city || !record.date) {
+    return null
+  }
+  const toNumber = (value: string) => {
+    if (!value) {
+      return null
+    }
+    const parsed = Number(value)
+    return Number.isFinite(parsed) ? parsed : null
+  }
+  return {
+    city: record.city,
+    date: record.date,
+    predicted: toNumber(record.heat_index_pred),
+    actual: toNumber(record.heat_index_actual),
+    residual: toNumber(record.residual),
+  }
+}
+
 const loadWeatherHistory = async (city: string, days: number): Promise<WeatherHistoryPoint[]> => {
   const raw = await fs.readFile(WEATHER_HISTORY_PATH, "utf-8")
   const { headers, rows } = parseCsv(raw)
@@ -159,6 +199,42 @@ const loadWeatherHistory = async (city: string, days: number): Promise<WeatherHi
     .filter((record): record is WeatherHistoryPoint => Boolean(record))
     .filter((record) => record.city.toLowerCase() === city.toLowerCase())
     .slice(-days)
+}
+
+const loadForecastSeries = async (city: string, days: number): Promise<ForecastPoint[]> => {
+  const raw = await fs.readFile(PREDICTIONS_PATH, "utf-8")
+  const { headers, rows } = parseCsv(raw)
+  if (!headers.length) {
+    return []
+  }
+  const cityLower = city.toLowerCase()
+  const records = rows
+    .map((row) => toForecastRecord(row, headers))
+    .filter((record): record is ForecastPoint & { city: string } => Boolean(record))
+    .filter((record) => record.city.toLowerCase() === cityLower)
+
+  if (!records.length) {
+    return []
+  }
+
+  const sorted = records.slice().sort((a, b) => {
+    const aTime = Date.parse(a.date)
+    const bTime = Date.parse(b.date)
+    if (!Number.isFinite(aTime) || !Number.isFinite(bTime)) {
+      return 0
+    }
+    return aTime - bTime
+  })
+
+  const today = new Date()
+  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime()
+  const upcoming = sorted.filter((record) => {
+    const parsed = Date.parse(record.date)
+    return Number.isFinite(parsed) && parsed >= todayStart
+  })
+
+  const window = upcoming.length ? upcoming : sorted.slice(-days)
+  return window.slice(0, days).map(({ date, predicted, actual, residual }) => ({ date, predicted, actual, residual }))
 }
 
 const findHourlyEntry = (payload: HourlyHeatIndexPayload, city: string): HourlyHeatIndexCity | null => {
@@ -199,6 +275,7 @@ export const buildInsightSnapshot = async (city: string, days = 7): Promise<Insi
   const hourlyPayload = await parseJsonFile<HourlyHeatIndexPayload>(HOURLY_PATH)
   const cityEntry = findHourlyEntry(hourlyPayload, city)
   const weatherHistory = await loadWeatherHistory(city, days)
+  const forecastPoints = await loadForecastSeries(city, days)
   const demographic = await findDemographicRecord(city)
 
   const hourlyPoints = cityEntry?.hourly ?? []
@@ -255,5 +332,6 @@ export const buildInsightSnapshot = async (city: string, days = 7): Promise<Insi
     coolingCenterLoadPct,
     hourlyPoints,
     weatherHistory,
+    forecastPoints,
   }
 }

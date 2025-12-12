@@ -21,6 +21,11 @@ const dataFiles = [
     source: ["..", "dataset", "clean", "safety_recommendations_cache.json"],
     target: ["public", "data", "safety_recommendations_cache.json"],
   },
+  {
+    name: "heat_index_predictions.csv",
+    source: ["..", "dataset", "prediction", "heat_index_predictions.csv"],
+    target: ["public", "data", "heat_index_predictions.csv"],
+  },
 ]
 
 const copyDataset = async ({ name, source, target }) => {

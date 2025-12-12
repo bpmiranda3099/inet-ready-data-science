@@ -2,6 +2,17 @@ import PDFDocument from "pdfkit"
 import { NextRequest, NextResponse } from "next/server"
 import { buildInsightSnapshot } from "@/lib/server/insights"
 
+const formatForecastDate = (value: string | null | undefined) => {
+  if (!value) {
+    return "Upcoming"
+  }
+  const parsed = Date.parse(value)
+  if (!Number.isFinite(parsed)) {
+    return value
+  }
+  return new Date(parsed).toLocaleDateString("en-PH", { weekday: "short", month: "short", day: "numeric" })
+}
+
 const buildPdfBuffer = async (city: string, days: number) => {
   const snapshot = await buildInsightSnapshot(city, days)
   const peakTimeLabel = (() => {
@@ -19,6 +30,25 @@ const buildPdfBuffer = async (city: string, days: number) => {
       month: "short",
       day: "numeric",
     })
+  })()
+  const hourlyOutlook = (() => {
+    const now = Date.now()
+    const future = snapshot.hourlyPoints
+      .map((point) => ({
+        timestamp: Date.parse(point.timestamp),
+        raw: point,
+      }))
+      .filter((entry) => Number.isFinite(entry.timestamp) && entry.timestamp >= now)
+      .slice(0, 6)
+    return future.map((entry) => ({
+      time: new Date(entry.timestamp).toLocaleTimeString("en-PH", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      }),
+      heatIndex: entry.raw.heat_index_c != null ? `${entry.raw.heat_index_c.toFixed(1)} °C` : "--",
+      humidity: entry.raw.relative_humidity != null ? `${entry.raw.relative_humidity.toFixed(0)} %` : "--",
+    }))
   })()
   return await new Promise<Buffer>((resolve, reject) => {
     const doc = new PDFDocument({ margin: 50 })
@@ -53,6 +83,20 @@ const buildPdfBuffer = async (city: string, days: number) => {
       )
     doc.moveDown(0.75)
 
+    doc.fontSize(12).fillColor("#1f2937").text("Short-term Forecast", { underline: true })
+    doc.moveDown(0.3)
+    if (hourlyOutlook.length) {
+      hourlyOutlook.forEach((point) => {
+        doc
+          .fontSize(10)
+          .fillColor("#475569")
+          .text(`${point.time}: Heat Index ${point.heatIndex} • Humidity ${point.humidity}`)
+      })
+    } else {
+      doc.fontSize(10).fillColor("#475569").text("No upcoming hourly forecast data available.")
+    }
+    doc.moveDown(0.75)
+
     doc.fontSize(12).fillColor("#1f2937").text("Population Impact", { underline: true })
     doc.moveDown(0.3)
     doc.fontSize(10)
@@ -78,6 +122,28 @@ const buildPdfBuffer = async (city: string, days: number) => {
           .fontSize(10)
           .fillColor("#475569")
           .text(`${point.date}: ${point.current != null ? point.current.toFixed(1) : "--"} °C (avg ${point.average != null ? point.average.toFixed(1) : "--"} °C)`)
+      })
+      doc.moveDown(0.75)
+    }
+
+    if (snapshot.forecastPoints.length) {
+      doc.fontSize(12).fillColor("#1f2937").text("Model Forecast (Heat Index)", { underline: true })
+      doc.moveDown(0.3)
+      snapshot.forecastPoints.forEach((point) => {
+        const predictedLabel = point.predicted != null ? `${point.predicted.toFixed(1)} °C` : "--"
+        const extras: string[] = []
+        if (point.actual != null) {
+          extras.push(`actual ${point.actual.toFixed(1)} °C`)
+        }
+        if (point.residual != null) {
+          const residualValue = point.residual >= 0 ? `+${point.residual.toFixed(2)}` : point.residual.toFixed(2)
+          extras.push(`residual ${residualValue}`)
+        }
+        const note = extras.length ? ` (${extras.join(", ")})` : ""
+        doc
+          .fontSize(10)
+          .fillColor("#475569")
+          .text(`${formatForecastDate(point.date)}: forecast ${predictedLabel}${note}`)
       })
       doc.moveDown(0.75)
     }

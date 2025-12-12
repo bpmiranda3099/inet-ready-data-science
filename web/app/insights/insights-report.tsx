@@ -36,6 +36,13 @@ type WeatherHistoryPoint = {
   average: number | null
 }
 
+type ForecastPoint = {
+  date: string
+  predicted: number | null
+  actual: number | null
+  residual: number | null
+}
+
 type DemographicRecord = {
   city: string
   classification: string
@@ -85,6 +92,7 @@ type InsightMetrics = {
   coolingCenterLoadPct: number | null
   hourlyPoints: HeatIndexPoint[]
   weatherHistory: WeatherHistoryPoint[]
+  forecastPoints: ForecastPoint[]
 }
 
 const fallbackHistoricalData: HistoricalChartPoint[] = [
@@ -143,6 +151,25 @@ const formatHeatIndex = (value: number | null | undefined, digits = 1) => {
     return "--"
   }
   return `${value.toFixed(digits)}°C`
+}
+
+const formatDateLabel = (dateString: string | null | undefined) => {
+  if (!dateString) {
+    return "--"
+  }
+  const parsed = Date.parse(dateString)
+  if (!Number.isFinite(parsed)) {
+    return dateString
+  }
+  return new Date(parsed).toLocaleDateString("en-PH", { month: "short", day: "numeric" })
+}
+
+const formatResidual = (value: number | null | undefined) => {
+  if (value == null) {
+    return "--"
+  }
+  const rounded = value.toFixed(2)
+  return value > 0 ? `+${rounded}` : rounded
 }
 
 export default function InsightsReport() {
@@ -290,6 +317,8 @@ export default function InsightsReport() {
       heatIndex: point.heat_index_c,
     }))
   }, [metrics])
+
+  const forecastRows = useMemo(() => metrics?.forecastPoints ?? [], [metrics])
 
   const demographicChartData = useMemo(() => {
     if (!demographics.length) {
@@ -533,50 +562,52 @@ export default function InsightsReport() {
           <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm lg:col-span-2">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <p className="text-xs uppercase tracking-wider text-gray-500">Demographic Impact</p>
-                <h2 className="text-xl font-semibold text-gray-900">Population & Land Footprint</h2>
+                <p className="text-xs uppercase tracking-wider text-gray-500">Forecast Window</p>
+                <h2 className="text-xl font-semibold text-gray-900">Heat Index Model Outlook</h2>
               </div>
               <span className="text-xs text-gray-500">
-                {demographicUpdatedLabel ? `Census ref ${demographicUpdatedLabel}` : demoStatus === "loading" ? "Loading" : "Last scrape"}
+                {forecastRows.length ? `Next ${forecastRows.length}-day feed` : "Need prediction sync"}
               </span>
             </div>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <dl>
-                <dt className="text-xs uppercase tracking-wide text-gray-500">2020 Population</dt>
-                <dd className="text-3xl font-semibold text-gray-900 mt-1">{formatNumber(selectedDemographic?.population2020)}</dd>
-              </dl>
-              <dl>
-                <dt className="text-xs uppercase tracking-wide text-gray-500">Density</dt>
-                <dd className="text-3xl font-semibold text-gray-900 mt-1">
-                  {selectedDemographic?.densityPerKm2 ? `${formatNumber(selectedDemographic.densityPerKm2)} / km²` : "--"}
-                </dd>
-              </dl>
+            <div className="overflow-x-auto">
+              <table className="min-w-full text-sm">
+                <thead>
+                  <tr className="text-left text-xs uppercase tracking-wide text-gray-500">
+                    <th className="pb-2 pr-4 font-semibold">Date</th>
+                    <th className="pb-2 pr-4 font-semibold">Forecast</th>
+                    <th className="pb-2 pr-4 font-semibold">Actual</th>
+                    <th className="pb-2 font-semibold">Residual</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {forecastRows.length ? (
+                    forecastRows.map((point) => (
+                      <tr key={point.date} className="border-t border-gray-100">
+                        <td className="py-3 pr-4 text-gray-900 font-medium">{formatDateLabel(point.date)}</td>
+                        <td className="py-3 pr-4 text-gray-700">{formatHeatIndex(point.predicted)}</td>
+                        <td className="py-3 pr-4 text-gray-700">{point.actual != null ? formatHeatIndex(point.actual) : "--"}</td>
+                        <td className={`py-3 text-gray-700 ${point.residual != null && Math.abs(point.residual) >= 1 ? "font-semibold" : ""}`}>
+                          {formatResidual(point.residual)}
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan={4} className="py-6 text-center text-gray-500">No forecast rows available. Run the prediction pipeline to populate this feed.</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
             </div>
-            <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
-              <div>
-                <p className="font-semibold text-gray-900">Classification</p>
-                <p className="capitalize">{selectedDemographic?.classification ?? "Not tagged"}</p>
+            <div className="mt-6">
+              <p className="text-xs uppercase tracking-wide text-gray-500">Tracked Cities</p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {cityOptions.map((city) => (
+                  <span key={city.name} className="text-xs font-semibold text-gray-600 bg-gray-100 rounded-full px-3 py-1">
+                    {city.name}
+                  </span>
+                ))}
               </div>
-              <div>
-                <p className="font-semibold text-gray-900">Barangays</p>
-                <p>{selectedDemographic?.barangays ?? "--"}</p>
-              </div>
-              <div>
-                <p className="font-semibold text-gray-900">Area</p>
-                <p>{selectedDemographic?.areaKm2 ? `${selectedDemographic.areaKm2.toFixed(1)} km²` : "--"}</p>
-              </div>
-            </div>
-            <div className="h-60 mt-8">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={demographicChartData} margin={{ top: 0, right: 0, left: -24, bottom: 0 }}>
-                  <CartesianGrid vertical={false} stroke="#f3f4f6" />
-                  <XAxis dataKey="name" tickLine={false} axisLine={false} fontSize={10} interval={0} angle={-40} textAnchor="end" height={80} />
-                  <YAxis tickLine={false} axisLine={false} fontSize={12} />
-                  <Tooltip contentStyle={{ borderRadius: 12, borderColor: "#e5e7eb" }} formatter={(value: number) => [formatNumber(value), "Population"]} />
-                  <Bar dataKey="cityPopulation" stackId="pop" fill="#0ea5e9" radius={[8, 8, 0, 0]} />
-                  <Bar dataKey="municipalPopulation" stackId="pop" fill="#6366f1" radius={[8, 8, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
             </div>
           </div>
 
