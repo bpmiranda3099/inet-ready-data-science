@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-12T10:46:04.060491+00:00",
+  "generated_at": "2025-12-12T12:00:06.434975+00:00",
   "timezone": "Asia/Singapore",
   "unit": "celsius",
   "cities": [
@@ -9,12 +9,12 @@
       "longitude": 120.921828,
       "current": {
         "city": "Amadeo",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 24.9,
-        "relative_humidity": 82.0,
-        "heat_index_f": 77.44,
-        "heat_index_c": 25.24,
-        "apparent_temperature_c": 27.0
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 24.7,
+        "relative_humidity": 83.0,
+        "heat_index_f": 77.08,
+        "heat_index_c": 25.05,
+        "apparent_temperature_c": 26.8
       },
       "hourly": [
         {
@@ -457,12 +457,12 @@
       "longitude": 120.936586,
       "current": {
         "city": "Imus",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 27.8,
-        "relative_humidity": 79.0,
-        "heat_index_f": 88.63,
-        "heat_index_c": 31.46,
-        "apparent_temperature_c": 31.7
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 27.1,
+        "relative_humidity": 82.0,
+        "heat_index_f": 86.3,
+        "heat_index_c": 30.17,
+        "apparent_temperature_c": 31.1
       },
       "hourly": [
         {
@@ -905,12 +905,12 @@
       "longitude": 120.880285,
       "current": {
         "city": "General Trias",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 27.7,
-        "relative_humidity": 79.0,
-        "heat_index_f": 88.21,
-        "heat_index_c": 31.23,
-        "apparent_temperature_c": 31.6
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 27.1,
+        "relative_humidity": 82.0,
+        "heat_index_f": 86.3,
+        "heat_index_c": 30.17,
+        "apparent_temperature_c": 31.0
       },
       "hourly": [
         {
@@ -1353,12 +1353,12 @@
       "longitude": 120.937087,
       "current": {
         "city": "Dasmarinas",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 27.3,
-        "relative_humidity": 79.0,
-        "heat_index_f": 86.55,
-        "heat_index_c": 30.31,
-        "apparent_temperature_c": 30.9
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 26.6,
+        "relative_humidity": 82.0,
+        "heat_index_f": 84.23,
+        "heat_index_c": 29.02,
+        "apparent_temperature_c": 30.3
       },
       "hourly": [
         {
@@ -1801,12 +1801,12 @@
       "longitude": 120.959817,
       "current": {
         "city": "Bacoor",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 26.4,
-        "relative_humidity": 83.0,
-        "heat_index_f": 83.55,
-        "heat_index_c": 28.64,
-        "apparent_temperature_c": 29.9
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 25.7,
+        "relative_humidity": 85.0,
+        "heat_index_f": 79.02,
+        "heat_index_c": 26.12,
+        "apparent_temperature_c": 29.2
       },
       "hourly": [
         {
@@ -2249,12 +2249,12 @@
       "longitude": 121.057434,
       "current": {
         "city": "Carmona",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 26.3,
-        "relative_humidity": 83.0,
-        "heat_index_f": 83.16,
-        "heat_index_c": 28.42,
-        "apparent_temperature_c": 29.8
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 25.6,
+        "relative_humidity": 85.0,
+        "heat_index_f": 78.83,
+        "heat_index_c": 26.02,
+        "apparent_temperature_c": 29.1
       },
       "hourly": [
         {
@@ -2697,12 +2697,12 @@
       "longitude": 120.903543,
       "current": {
         "city": "Kawit",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 27.8,
-        "relative_humidity": 79.0,
-        "heat_index_f": 88.63,
-        "heat_index_c": 31.46,
-        "apparent_temperature_c": 31.8
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 27.2,
+        "relative_humidity": 82.0,
+        "heat_index_f": 86.73,
+        "heat_index_c": 30.4,
+        "apparent_temperature_c": 31.2
       },
       "hourly": [
         {
@@ -3145,12 +3145,12 @@
       "longitude": 120.880845,
       "current": {
         "city": "Noveleta",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 27.8,
-        "relative_humidity": 79.0,
-        "heat_index_f": 88.63,
-        "heat_index_c": 31.46,
-        "apparent_temperature_c": 31.8
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 27.1,
+        "relative_humidity": 82.0,
+        "heat_index_f": 86.3,
+        "heat_index_c": 30.17,
+        "apparent_temperature_c": 31.2
       },
       "hourly": [
         {
@@ -3593,12 +3593,12 @@
       "longitude": 120.97415,
       "current": {
         "city": "Silang",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 24.1,
-        "relative_humidity": 85.0,
-        "heat_index_f": 76.0,
-        "heat_index_c": 24.44,
-        "apparent_temperature_c": 26.1
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 23.9,
+        "relative_humidity": 86.0,
+        "heat_index_f": 75.64,
+        "heat_index_c": 24.25,
+        "apparent_temperature_c": 25.8
       },
       "hourly": [
         {
@@ -4041,12 +4041,12 @@
       "longitude": 120.764254,
       "current": {
         "city": "Naic",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 26.8,
-        "relative_humidity": 82.0,
-        "heat_index_f": 85.04,
-        "heat_index_c": 29.47,
-        "apparent_temperature_c": 30.3
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 26.6,
+        "relative_humidity": 83.0,
+        "heat_index_f": 84.36,
+        "heat_index_c": 29.09,
+        "apparent_temperature_c": 30.1
       },
       "hourly": [
         {
@@ -4489,12 +4489,12 @@
       "longitude": 120.857285,
       "current": {
         "city": "Tanza",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 27.7,
-        "relative_humidity": 79.0,
-        "heat_index_f": 88.21,
-        "heat_index_c": 31.23,
-        "apparent_temperature_c": 31.7
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 27.1,
+        "relative_humidity": 82.0,
+        "heat_index_f": 86.3,
+        "heat_index_c": 30.17,
+        "apparent_temperature_c": 31.1
       },
       "hourly": [
         {
@@ -4937,12 +4937,12 @@
       "longitude": 120.85542,
       "current": {
         "city": "Alfonso",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 25.0,
-        "relative_humidity": 82.0,
-        "heat_index_f": 77.63,
-        "heat_index_c": 25.35,
-        "apparent_temperature_c": 27.1
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 24.8,
+        "relative_humidity": 83.0,
+        "heat_index_f": 77.27,
+        "heat_index_c": 25.15,
+        "apparent_temperature_c": 27.0
       },
       "hourly": [
         {
@@ -5385,12 +5385,12 @@
       "longitude": 120.878468,
       "current": {
         "city": "Indang",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 24.2,
-        "relative_humidity": 84.0,
-        "heat_index_f": 76.16,
-        "heat_index_c": 24.53,
-        "apparent_temperature_c": 26.4
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 23.9,
+        "relative_humidity": 86.0,
+        "heat_index_f": 75.64,
+        "heat_index_c": 24.25,
+        "apparent_temperature_c": 26.2
       },
       "hourly": [
         {
@@ -5833,12 +5833,12 @@
       "longitude": 120.854869,
       "current": {
         "city": "Rosario",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 27.8,
-        "relative_humidity": 79.0,
-        "heat_index_f": 88.63,
-        "heat_index_c": 31.46,
-        "apparent_temperature_c": 31.8
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 27.1,
+        "relative_humidity": 82.0,
+        "heat_index_f": 86.3,
+        "heat_index_c": 30.17,
+        "apparent_temperature_c": 31.2
       },
       "hourly": [
         {
@@ -6281,12 +6281,12 @@
       "longitude": 120.870237,
       "current": {
         "city": "Trece Martires",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 25.4,
-        "relative_humidity": 84.0,
-        "heat_index_f": 78.43,
-        "heat_index_c": 25.79,
-        "apparent_temperature_c": 28.2
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 25.0,
+        "relative_humidity": 86.0,
+        "heat_index_f": 77.72,
+        "heat_index_c": 25.4,
+        "apparent_temperature_c": 28.0
       },
       "hourly": [
         {
@@ -6729,12 +6729,12 @@
       "longitude": 121.007081,
       "current": {
         "city": "General Mariano Alvarez",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 25.0,
-        "relative_humidity": 85.0,
-        "heat_index_f": 77.7,
-        "heat_index_c": 25.39,
-        "apparent_temperature_c": 27.5
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 24.8,
+        "relative_humidity": 86.0,
+        "heat_index_f": 77.34,
+        "heat_index_c": 25.19,
+        "apparent_temperature_c": 27.2
       },
       "hourly": [
         {
@@ -7177,12 +7177,12 @@
       "longitude": 120.908919,
       "current": {
         "city": "Cavite City",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 27.8,
-        "relative_humidity": 79.0,
-        "heat_index_f": 88.63,
-        "heat_index_c": 31.46,
-        "apparent_temperature_c": 31.8
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 27.1,
+        "relative_humidity": 82.0,
+        "heat_index_f": 86.3,
+        "heat_index_c": 30.17,
+        "apparent_temperature_c": 31.2
       },
       "hourly": [
         {
@@ -7625,12 +7625,12 @@
       "longitude": 120.939182,
       "current": {
         "city": "Tagaytay",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 22.4,
-        "relative_humidity": 88.0,
-        "heat_index_f": 72.85,
-        "heat_index_c": 22.7,
-        "apparent_temperature_c": 23.8
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 22.2,
+        "relative_humidity": 89.0,
+        "heat_index_f": 72.5,
+        "heat_index_c": 22.5,
+        "apparent_temperature_c": 23.9
       },
       "hourly": [
         {
@@ -8073,12 +8073,12 @@
       "longitude": 120.905143,
       "current": {
         "city": "Mendez",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 24.4,
-        "relative_humidity": 82.0,
-        "heat_index_f": 76.49,
-        "heat_index_c": 24.72,
-        "apparent_temperature_c": 26.1
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 24.2,
+        "relative_humidity": 83.0,
+        "heat_index_f": 76.14,
+        "heat_index_c": 24.52,
+        "apparent_temperature_c": 26.0
       },
       "hourly": [
         {
@@ -8521,12 +8521,12 @@
       "longitude": 120.716004,
       "current": {
         "city": "Ternate",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 26.9,
-        "relative_humidity": 82.0,
-        "heat_index_f": 85.46,
-        "heat_index_c": 29.7,
-        "apparent_temperature_c": 30.4
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 26.6,
+        "relative_humidity": 83.0,
+        "heat_index_f": 84.36,
+        "heat_index_c": 29.09,
+        "apparent_temperature_c": 30.2
       },
       "hourly": [
         {
@@ -8969,12 +8969,12 @@
       "longitude": 120.734928,
       "current": {
         "city": "Maragondon",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 26.8,
-        "relative_humidity": 82.0,
-        "heat_index_f": 85.04,
-        "heat_index_c": 29.47,
-        "apparent_temperature_c": 30.3
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 26.6,
+        "relative_humidity": 83.0,
+        "heat_index_f": 84.36,
+        "heat_index_c": 29.09,
+        "apparent_temperature_c": 30.1
       },
       "hourly": [
         {
@@ -9417,12 +9417,12 @@
       "longitude": 120.757325,
       "current": {
         "city": "Magallanes",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 27.4,
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 27.1,
         "relative_humidity": 79.0,
-        "heat_index_f": 86.96,
-        "heat_index_c": 30.53,
-        "apparent_temperature_c": 30.4
+        "heat_index_f": 85.76,
+        "heat_index_c": 29.86,
+        "apparent_temperature_c": 30.1
       },
       "hourly": [
         {
@@ -9865,12 +9865,12 @@
       "longitude": 120.7397,
       "current": {
         "city": "General Emilio Aguinaldo",
-        "timestamp": "2025-12-12T18:00:00+08:00",
-        "temperature_c": 26.1,
-        "relative_humidity": 82.0,
-        "heat_index_f": 79.71,
-        "heat_index_c": 26.5,
-        "apparent_temperature_c": 29.1
+        "timestamp": "2025-12-12T19:00:00+08:00",
+        "temperature_c": 25.8,
+        "relative_humidity": 83.0,
+        "heat_index_f": 79.16,
+        "heat_index_c": 26.2,
+        "apparent_temperature_c": 28.9
       },
       "hourly": [
         {

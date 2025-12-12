@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import csv
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta, tzinfo
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from constants.error import OpenMeteoRequestError
 from constants.files import GET_HOURLY_HEAT_INDEX_LOG_FILENAME
@@ -87,7 +87,7 @@ def _point_from_hour(
     temp_c: float,
     humidity: float,
     apparent_c: Optional[float],
-    tz: ZoneInfo,
+    tz: tzinfo,
 ) -> Dict[str, Any]:
     dt_local = datetime.fromisoformat(timestamp).replace(tzinfo=tz)
     hi_f = compute_heat_index_f(temp_c, humidity)
@@ -106,7 +106,7 @@ def _point_from_hour(
     return point
 
 
-def _build_points(city: str, hourly: Dict[str, List[Any]], tz: ZoneInfo) -> List[Dict[str, Any]]:
+def _build_points(city: str, hourly: Dict[str, List[Any]], tz: tzinfo) -> List[Dict[str, Any]]:
     times = [str(ts) for ts in (hourly.get("time") or [])]
     temps = hourly.get("temperature_2m") or []
     humidity = hourly.get("relative_humidity_2m") or []
@@ -142,6 +142,14 @@ def _strip_dt(point: Dict[str, Any]) -> Dict[str, Any]:
     return point
 
 
+def _resolve_timezone(name: str, logger) -> tzinfo:
+    try:
+        return ZoneInfo(name)
+    except ZoneInfoNotFoundError:
+        logger.warning("ZoneInfo %s missing. Falling back to UTC+08:00 (fixed offset).", name)
+        return timezone(timedelta(hours=8), name="UTC+08:00")
+
+
 def main() -> None:
     ensure_dirs()
     logger = get_logger(
@@ -156,7 +164,7 @@ def main() -> None:
         logger.warning("No city coordinates available. Run get_city_coords.py first.")
         return
 
-    tz = ZoneInfo(DEFAULT_TIMEZONE)
+    tz = _resolve_timezone(DEFAULT_TIMEZONE, logger)
     now_local = datetime.now(tz)
     all_points: List[Dict[str, Any]] = []
     summaries: List[Dict[str, Any]] = []
