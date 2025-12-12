@@ -1,24 +1,24 @@
 city,classification,district,population_2020,population_2015,annual_growth_rate_pct,area_km2,density_per_km2,barangays,province_population_share_pct,source_url,collected_at
-Alfonso,municipality,8th,59306,51839,2.6,66.58,891.0,32,1.4,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Amadeo,municipality,7th,41901,37649,2.06,36.92,1135.0,26,1.0,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Bacoor,city,2nd,664625,600609,1.95,46.17,14395.0,47,15.3,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Carmona,city,5th,106256,97557,1.64,29.68,3580.0,14,2.4,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Cavite City,city,1st,100674,102806,0.4,10.89,9245.0,84,2.3,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Dasmarinas,city,4th,703141,659019,1.24,90.13,7801.0,75,16.2,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-General Emilio Aguinaldo,municipality,8th,23973,22220,1.46,42.13,569.0,14,0.6,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-General Mariano Alvarez,municipality,5th,172433,155143,2.03,9.4,18344.0,27,4.0,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-General Trias,city,6th,450583,314303,7.1,90.01,5006.0,33,10.4,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Imus,city,3rd,496794,403785,4.03,53.15,9347.0,97,11.4,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Indang,municipality,7th,68699,65599,0.88,74.9,917.0,36,1.6,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Kawit,municipality,1st,107535,83466,4.94,25.15,4276.0,23,2.5,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Magallanes,municipality,8th,23851,22727,0.92,73.07,326.0,16,0.5,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Maragondon,municipality,8th,40687,37720,1.45,164.61,247.0,27,0.9,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Mendez,municipality,8th,34879,31529,1.94,43.27,806.0,24,0.8,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Naic,municipality,8th,160987,111454,7.25,75.81,2124.0,30,3.7,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Noveleta,municipality,1st,49452,45846,1.45,16.43,3010.0,16,1.1,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Rosario,municipality,1st,110807,110706,0.02,7.61,14561.0,20,2.6,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Silang,city,5th,295644,248085,3.4,209.43,1412.0,64,6.8,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Tagaytay,city,8th,85330,71181,3.51,65.0,1313.0,34,2.0,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Tanza,municipality,7th,312116,226188,6.32,78.33,3985.0,41,7.2,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Ternate,municipality,8th,24653,23157,1.2,59.93,411.0,10,0.6,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
-Trece Martires,city,7th,210503,155713,5.91,39.1,5384.0,13,4.8,https://en.wikipedia.org/wiki/Cavite,2025-12-12T10:52:05.369816+00:00
+Alfonso,municipality,8th,59306,51839,2.6,66.58,891.0,32,1.4,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Amadeo,municipality,7th,41901,37649,2.06,36.92,1135.0,26,1.0,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Bacoor,city,2nd,664625,600609,1.95,46.17,14395.0,47,15.3,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Carmona,city,5th,106256,97557,1.64,29.68,3580.0,14,2.4,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Cavite City,city,1st,100674,102806,0.4,10.89,9245.0,84,2.3,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Dasmarinas,city,4th,703141,659019,1.24,90.13,7801.0,75,16.2,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+General Emilio Aguinaldo,municipality,8th,23973,22220,1.46,42.13,569.0,14,0.6,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+General Mariano Alvarez,municipality,5th,172433,155143,2.03,9.4,18344.0,27,4.0,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+General Trias,city,6th,450583,314303,7.1,90.01,5006.0,33,10.4,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Imus,city,3rd,496794,403785,4.03,53.15,9347.0,97,11.4,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Indang,municipality,7th,68699,65599,0.88,74.9,917.0,36,1.6,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Kawit,municipality,1st,107535,83466,4.94,25.15,4276.0,23,2.5,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Magallanes,municipality,8th,23851,22727,0.92,73.07,326.0,16,0.5,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Maragondon,municipality,8th,40687,37720,1.45,164.61,247.0,27,0.9,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Mendez,municipality,8th,34879,31529,1.94,43.27,806.0,24,0.8,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Naic,municipality,8th,160987,111454,7.25,75.81,2124.0,30,3.7,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Noveleta,municipality,1st,49452,45846,1.45,16.43,3010.0,16,1.1,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Rosario,municipality,1st,110807,110706,0.02,7.61,14561.0,20,2.6,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Silang,city,5th,295644,248085,3.4,209.43,1412.0,64,6.8,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Tagaytay,city,8th,85330,71181,3.51,65.0,1313.0,34,2.0,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Tanza,municipality,7th,312116,226188,6.32,78.33,3985.0,41,7.2,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Ternate,municipality,8th,24653,23157,1.2,59.93,411.0,10,0.6,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
+Trece Martires,city,7th,210503,155713,5.91,39.1,5384.0,13,4.8,https://en.wikipedia.org/wiki/Cavite,2025-12-12T12:04:04.166241+00:00
